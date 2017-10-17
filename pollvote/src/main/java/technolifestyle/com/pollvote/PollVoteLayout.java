@@ -35,34 +35,37 @@ public class PollVoteLayout extends LinearLayout {
         setLayout();
     }
 
+    @SuppressLint("CutPasteId")
     private void setLayout() {
-        View view = LayoutInflater.from(context).inflate(R.layout.poll_vote_layout, this);
+        View view = LayoutInflater.from(context).inflate(R.layout.poll_vote_layout, this, true);
         container = (LinearLayout) view.findViewById(R.id.ll_options_container);
         tvQuest = (TextView) view.findViewById(R.id.tv_question);
-        tvOption1 = (TextView) view.findViewById(R.id.tv_option_1);
-        tvOption2 = (TextView) view.findViewById(R.id.tv_option_2);
+        View optionView = view.findViewById(R.id.option_1_view);
+        tvOption1 = (TextView) optionView.findViewById(R.id.tv_option);
+        optionView = view.findViewById(R.id.option_2_view);
+        tvOption2 = (TextView) optionView.findViewById(R.id.tv_option);
     }
 
-    private PollVoteLayout addOption(String optionText) {
+    public PollVoteLayout addOption(String optionText) {
         @SuppressLint("InflateParams")
-        View view = LayoutInflater.from(context).inflate(R.layout.option_layout, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.option_layout, container, false);
         TextView tvOption = (TextView) view.findViewById(R.id.tv_option);
         tvOption.setText(optionText);
         container.addView(view);
         return this;
     }
 
-    private PollVoteLayout setupQuestion(String question) {
+    public PollVoteLayout setupQuestion(String question) {
         tvQuest.setText(question);
         return this;
     }
 
-    private PollVoteLayout setupFirstOption(String option) {
+    public PollVoteLayout setupFirstOption(String option) {
         tvOption1.setText(option);
         return this;
     }
 
-    private PollVoteLayout setupSecondOption(String option) {
+    public PollVoteLayout setupSecondOption(String option) {
         tvOption2.setText(option);
         return this;
     }
