@@ -6,20 +6,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="technolifestyle.com.pollvote.PollActivity">
+    tools:context="technolifestyle.com.pollvote.PollVoteLayout">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_x"
+        android:layout_marginBottom="@dimen/margin_x2"
+        android:layout_marginEnd="@dimen/margin_x"
+        android:layout_marginStart="@dimen/margin_x"
+        android:layout_marginTop="@dimen/margin_x2"
         app:cardCornerRadius="@dimen/margin_x2">
 
         <TextView
+            android:id="@+id/tv_question"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/question_hint"
             android:padding="@dimen/padding_3x2"
             android:textSize="@dimen/text_2x"
-            android:hint="@string/question_hint"
             tools:text="Q. Which is your favourite programming language?" />
     </android.support.v7.widget.CardView>
+
+    <include
+        android:id="@+id/tv_option_1"
+        layout="@layout/option_layout" />
+
+    <include
+        android:id="@+id/tv_option_2"
+        layout="@layout/option_layout" />
 </LinearLayout>

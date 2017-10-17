@@ -5,11 +5,15 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/margin_x"
+    android:layout_marginStart="@dimen/margin_x"
+    android:layout_marginEnd="@dimen/margin_x"
+    android:layout_marginTop="@dimen/margin_x2"
+    android:layout_marginBottom="@dimen/margin_x2"
     app:cardCornerRadius="@dimen/margin_x2"
     android:foreground="?attr/selectableItemBackground">
 
     <TextView
+        android:id="@+id/tv_option"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text = "Option 1"
