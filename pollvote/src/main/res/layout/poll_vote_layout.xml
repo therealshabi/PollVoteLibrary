@@ -26,12 +26,4 @@
             android:textSize="@dimen/text_2x"
             tools:text="Q. Which is your favourite programming language?" />
     </android.support.v7.widget.CardView>
-
-    <include
-        android:id="@+id/option_1_view"
-        layout="@layout/option_layout" />
-
-    <include
-        android:id="@+id/option_2_view"
-        layout="@layout/option_layout" />
 </LinearLayout>
