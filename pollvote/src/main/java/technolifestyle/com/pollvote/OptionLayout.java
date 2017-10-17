@@ -46,6 +46,7 @@ public class OptionLayout extends FrameLayout {
     OptionLayout setOptionText(PollQuestion poll, String optionText) {
         tvOption.setText(optionText);
         option.setOption(optionText);
+        option.addPoll(poll);
         poll.addOption(option);
         return this;
     }

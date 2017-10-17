@@ -44,7 +44,7 @@ public class PollQuestion {
     }
 
     public void addOption(String optionText) {
-        Option option = new Option(optionText);
+        Option option = new Option(optionText, this);
         this.options.add(option);
     }
 
