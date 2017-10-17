@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Poll Vote</string>
+    <string name="question_hint">Write your question here...</string>
 </resources>

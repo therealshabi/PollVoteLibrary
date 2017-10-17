@@ -2,9 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_options_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="technolifestyle.com.pollvote.PollActivity">
 
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_x"
+        app:cardCornerRadius="@dimen/margin_x">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_3x2"
+            android:textSize="@dimen/text_2x"
+            android:hint="@string/question_hint"
+            tools:text="Q. Which is your favourite programming language?" />
+    </android.support.v7.widget.CardView>
 </LinearLayout>
