@@ -17,8 +17,10 @@ public class OptionLayout extends FrameLayout implements View.OnClickListener {
 
     private Context context;
     private TextView tvOption;
+    private CardView cardView;
 
     private Option option;
+    private OnOptionClicked onOptionClicked;
 
     public OptionLayout(Context context) {
         super(context);
@@ -41,10 +43,14 @@ public class OptionLayout extends FrameLayout implements View.OnClickListener {
     private void setLayout() {
         @SuppressLint("InflateParams")
         View view = LayoutInflater.from(context).inflate(R.layout.option_layout, this);
-        CardView cardView = (CardView) view.findViewById(R.id.card_view);
+        cardView = (CardView) view.findViewById(R.id.card_view);
         tvOption = (TextView) view.findViewById(R.id.tv_option);
         option = new Option();
         cardView.setOnClickListener(this);
+    }
+
+    public void setOnOptionClicked(OnOptionClicked onOptionClicked) {
+        this.onOptionClicked = onOptionClicked;
     }
 
     OptionLayout setOptionText(PollQuestion poll, String optionText) {
@@ -61,9 +67,18 @@ public class OptionLayout extends FrameLayout implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+        onOptionClicked.onClicked();
         option.addVote();
         Toast.makeText(context, String.format("%s %s %s %s",
                 "Votes for", option.getOptionText(), ":",
                 option.getNumOfVotes()), Toast.LENGTH_SHORT).show();
+    }
+
+    public void setOptionUnclickable() {
+        cardView.setClickable(false);
+    }
+
+    interface OnOptionClicked {
+        void onClicked();
     }
 }

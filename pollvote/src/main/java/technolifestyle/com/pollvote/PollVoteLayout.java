@@ -12,7 +12,7 @@ import java.util.List;
 
 import technolifestyle.com.pollvote.models.PollQuestion;
 
-public class PollVoteLayout extends LinearLayout {
+public class PollVoteLayout extends LinearLayout implements OptionLayout.OnOptionClicked {
 
     private LinearLayout container;
     private TextView tvQuest;
@@ -47,6 +47,8 @@ public class PollVoteLayout extends LinearLayout {
         tvQuest = (TextView) view.findViewById(R.id.tv_question);
         optionLayout1 = new OptionLayout(context);
         optionLayout2 = new OptionLayout(context);
+        optionLayout1.setOnOptionClicked(this);
+        optionLayout2.setOnOptionClicked(this);
         container.addView(optionLayout1);
         container.addView(optionLayout2);
     }
@@ -54,6 +56,7 @@ public class PollVoteLayout extends LinearLayout {
     public PollVoteLayout addOption(String optionText) {
         OptionLayout optionLayout = new OptionLayout(context)
                 .setOptionText(poll, optionText);
+        optionLayout.setOnOptionClicked(this);
         container.addView(optionLayout);
         return this;
     }
@@ -62,6 +65,7 @@ public class PollVoteLayout extends LinearLayout {
         for (String optionText : options) {
             OptionLayout optionLayout = new OptionLayout(context)
                     .setOptionText(poll, optionText);
+            optionLayout.setOnOptionClicked(this);
             container.addView(optionLayout);
         }
         return this;
@@ -83,16 +87,10 @@ public class PollVoteLayout extends LinearLayout {
         return this;
     }
 
-    /*public PollVoteLayout addOptionClickListener() {
+    @Override
+    public void onClicked() {
         for (int i = 0; i < container.getChildCount(); i++) {
-            Log.d("Here", "Hi");
-            *//*if (container.getChildAt(i) instanceof OptionLayout) {
-                Log.d("Here", "OptionLayout");
-            } else {
-                Log.d("Here", "CardView");
-            }*//*
-            ((OptionLayout) container.getChildAt(i)).setOnClickListener(this);
+            ((OptionLayout) container.getChildAt(i)).setOptionUnclickable();
         }
-        return this;
-    }*/
+    }
 }
