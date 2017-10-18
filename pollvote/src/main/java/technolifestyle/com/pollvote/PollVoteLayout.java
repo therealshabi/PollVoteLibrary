@@ -82,4 +82,17 @@ public class PollVoteLayout extends LinearLayout {
         optionLayout2.setOptionText(poll, option);
         return this;
     }
+
+    /*public PollVoteLayout addOptionClickListener() {
+        for (int i = 0; i < container.getChildCount(); i++) {
+            Log.d("Here", "Hi");
+            *//*if (container.getChildAt(i) instanceof OptionLayout) {
+                Log.d("Here", "OptionLayout");
+            } else {
+                Log.d("Here", "CardView");
+            }*//*
+            ((OptionLayout) container.getChildAt(i)).setOnClickListener(this);
+        }
+        return this;
+    }*/
 }

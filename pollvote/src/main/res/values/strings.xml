@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Poll Vote</string>
     <string name="question_hint">Write your question here...</string>
-    <string name="option_hint">Give your option here..</string>
+    <string name="option_hint">Give your optionText here..</string>
 </resources>

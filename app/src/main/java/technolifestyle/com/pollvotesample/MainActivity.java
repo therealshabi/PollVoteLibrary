@@ -1,7 +1,7 @@
 package technolifestyle.com.pollvotesample;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import technolifestyle.com.pollvote.PollVoteLayout;
 
@@ -17,9 +17,9 @@ public class MainActivity extends AppCompatActivity {
         pollVoteLayout = (PollVoteLayout) findViewById(R.id.poll_layout);
 
         pollVoteLayout.setupQuestion("Q. Who is the Prime Minister of Democratic Republic of India?")
-        .setupFirstOption("Narendra Modi")
-        .setupSecondOption("Rahul Gandhi")
-        .addOption("Arvind Kejriwal")
-        .addOption("Nitish Kumar");
+                .setupFirstOption("Narendra Modi")
+                .setupSecondOption("Rahul Gandhi")
+                .addOption("Arvind Kejriwal")
+                .addOption("Nitish Kumar");
     }
 }
